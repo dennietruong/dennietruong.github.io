@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <header>
+    <h1>Your Name</h1>
+    <p>Data • Analytics • Strategy</p>
+  </header>
+
+  <nav>
+    <button class="tab active" onclick="openTab('home')">Home</button>
+    <button class="tab" onclick="openTab('about')">About Me</button>
+    <button class="tab" onclick="openTab('projects')">Projects</button>
+    <button class="tab" onclick="openTab('contact')">Contact</button>
+  </nav>
+
+  <main>
+    <section id="home" class="tab-content active">
+      <h2>Home</h2>
+      <p>
+        Welcome to my personal website. I use data, analytics, and research
+        to generate clear, actionable insights.
+      </p>
+    </section>
+
+    <section id="about" class="tab-content">
+      <h2>About Me</h2>
+      <p>
+        I have experience in statistical analysis, data visualization, and
+        research across academic and applied settings.
+      </p>
+    </section>
+
+    <section id="projects" class="tab-content">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Project 1:</strong> Description of analysis or model</li>
+        <li><strong>Project 2:</strong> Description of research or visualization</li>
+        <li><strong>Project 3:</strong> Link to GitHub repository</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>Email: yourname@email.com</p>
+      <p>
+        <a href="https://github.com/yourusername">GitHub</a> |
+        <a href="https://linkedin.com/in/yourname">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
