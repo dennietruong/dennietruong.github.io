@@ -87,6 +87,9 @@ body {
 
 
 .pdf-container {
+  display: flex;
+  flex-direction: column; /* stack iframe and link vertically */
+  align-items: center;    /* center horizontally */
   margin: 20px 0;
 }
 
