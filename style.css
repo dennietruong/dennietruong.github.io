@@ -1,26 +1,23 @@
-/* ---------- GLOBAL ---------- */
+/* =========================
+   GLOBAL BASE STYLES
+   ========================= */
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: #f6f8fa;
   color: #222;
+  line-height: 1.6;
 }
 
-/* ---------- HOME BACKGROUND ---------- */
-body.home {
-  background-image: url("images/Stadium1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
-
-/* ---------- NAVIGATION ---------- */
+/* =========================
+   NAVIGATION
+   ========================= */
 .navbar {
-  background: rgba(11, 28, 45, 0.85);
+  background: #1d3557;
   padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -36,8 +33,7 @@ body.home {
   color: white;
   font-size: 1.4rem;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .nav-links {
@@ -52,79 +48,101 @@ body.home {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-  border-bottom: 2px solid #e63946;
-  padding-bottom: 2px;
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #e63946;
+  left: 0;
+  bottom: -6px;
 }
 
-/* ---------- HERO SECTION ---------- */
-.hero {
+/* =========================
+   CONTENT (NON-HOME PAGES)
+   ========================= */
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   HOME PAGE BACKGROUND
+   ========================= */
+body.home {
+  background-image: url("images/Stadium1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* =========================
+   HOME HERO SECTION
+   ========================= */
+body.home .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 
-  background: rgba(11, 28, 45, 0.75); /* overlay */
+  background: rgba(11, 28, 45, 0.78); /* overlay */
   color: white;
   padding: 40px 20px;
 }
 
 .hero-content {
   max-width: 900px;
-  animation: fadeUp 1.2s ease-out;
 }
 
-/* ---------- SPECIAL HOME ELEMENT ---------- */
-.hero-tagline {
-  font-size: 0.9rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #a8dadc;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 10px;
-  animation: fadeDown 1.2s ease-out;
+/* =========================
+   HOME HERO TEXT
+   ========================= */
+body.home .hero-tagline {
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  opacity: 0.85;
+  margin-bottom: 20px;
 }
 
-/* ---------- NAME ---------- */
-.hero-name {
-  font-size: clamp(3.8rem, 8vw, 6.5rem); /* responsive huge text */
+body.home .hero-name {
+  font-size: clamp(4rem, 8vw, 6.8rem);
   font-weight: 800;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin: 20px 0 25px;
+  margin: 10px 0 25px;
   line-height: 1.1;
 
-  /* subtle glow + contrast */
   color: #ffffff;
   text-shadow:
-    0 4px 12px rgba(0,0,0,0.6),
-    0 0 25px rgba(69, 123, 157, 0.35);
+    0 4px 14px rgba(0,0,0,0.6),
+    0 0 30px rgba(69, 123, 157, 0.35);
 }
 
-.hero-divider {
-  width: 80px;
-  height: 4px;
-  background: #e63946;
-  margin: 0 auto 30px;
-  border-radius: 2px;
+body.home .hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  opacity: 0.95;
+  margin-bottom: 45px;
 }
 
-
-/* ---------- SUBTITLE ---------- */
-.hero-subtitle {
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto 35px;
-  line-height: 1.6;
-  color: #f1f1f1;
-}
-
-/* ---------- CTA BUTTONS ---------- */
+/* =========================
+   HOME CALL TO ACTION
+   ========================= */
 .hero-cta {
   display: flex;
   gap: 20px;
@@ -134,11 +152,11 @@ body.home {
 
 .btn-primary,
 .btn-secondary {
-  padding: 12px 30px;
+  padding: 14px 32px;
   border-radius: 30px;
-  text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .btn-primary {
@@ -147,7 +165,7 @@ body.home {
 }
 
 .btn-primary:hover {
-  background: #ff4d5a;
+  background: #d62839;
   transform: translateY(-2px);
 }
 
@@ -161,126 +179,99 @@ body.home {
   color: #1d3557;
 }
 
-/* ---------- ANIMATIONS ---------- */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* =========================
+   IMAGES
+   ========================= */
+.project-images {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.project-images img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* =========================
+   PDF EMBEDS
+   ========================= */
+.pdf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 0;
+}
 
-/* Content */ 
-.content { max-width: 900px; 
-          margin: auto; padding: 60px 20px; 
-         } 
+.pdf-container iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
 
-.card { background: white; 
-       padding: 25px; 
-       border-radius: 10px; 
-       margin-bottom: 20px; 
-       box-shadow: 0 8px 16px rgba(0,0,0,0.05); 
-      }
+/* =========================
+   VIDEO EMBEDS
+   ========================= */
+.video-container {
+  text-align: center;
+  margin: 25px 0;
+}
 
+.video-container video {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
 
-/* IMAGE */ 
-.project-images { display: flex; 
-                 gap: 15px; 
-                 margin-top: 15px; 
-                 justify-content: center; /* centers images horizontally */ 
-                 flex-wrap: wrap; /* wrap on smaller screens */ 
-                } 
+/* =========================
+   CONTACT PAGE
+   ========================= */
+.contact-section {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
 
-.project-images img { width: 250px; /* adjust size as needed */ 
-                     height: auto; 
-                     border-radius: 8px; 
-                     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-                    } 
+.contact-intro {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
 
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
 
-/* PDF */ 
-.pdf-container { display: flex; 
-                flex-direction: column; /* stack iframe and link vertically */ 
-                align-items: center; /* center horizontally */ 
-                margin: 20px 0; } 
+.contact-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-.pdf-container iframe { border-radius: 8px; 
-                       box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-                      } 
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+}
 
+.contact-card a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-/* VIDEO */ 
-.video-container { text-align: center; /* centers video */ 
-                              margin: 20px 0; } 
+.contact-card a:hover {
+  text-decoration: underline;
+}
 
-.video-container video { max-width: 100%; /* responsive */ 
-                        height: auto; border-radius: 8px; 
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-
-
-
-/* CONTACT TAB STYLES */ 
-.contact-section { text-align: center; 
-                  max-width: 900px; 
-                  margin: auto; } 
-
-.contact-intro { font-size: 1.1rem; 
-                margin-bottom: 30px; 
-                color: #444; } 
-
-.contact-cards { display: grid; 
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-                gap: 20px; margin: 30px 0; } 
-
-.contact-card { background: #ffffff; 
-               padding: 20px; 
-               border-radius: 12px; 
-               box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
-               transition: transform 0.2s ease, 
-                 box-shadow 0.2s ease; } 
-
-.contact-card:hover { transform: translateY(-5px); 
-                     box-shadow: 0 10px 25px rgba(0,0,0,0.15); } 
-
-.contact-card h3 { margin-bottom: 10px; } 
-
-.contact-card a { text-decoration: none; 
-                 color: #0056b3; 
-                 font-weight: 500; } 
-
-.contact-card a:hover { text-decoration: underline; } 
-
-.contact-footer { margin-top: 30px; 
-                 font-style: italic; 
-                 color: #555; } 
-
-
-body.home { background-image: url("images/Stadium1.jpg"); 
-           background-size: cover; 
-           background-position: center; 
-           background-repeat: no-repeat; 
-           min-height: 100vh; } 
-
-.hero { min-height: 100vh; 
-       display: flex; 
-       align-items: center; 
-       justify-content: center; 
-       text-align: center; 
-       background: rgba(11, 28, 45, 0.75); /* overlay */ 
-       color: white; 
-       padding: 40px 20px; }
+.contact-footer {
+  margin-top: 35px;
+  font-style: italic;
+  color: #555;
+}
