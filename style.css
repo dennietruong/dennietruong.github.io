@@ -73,13 +73,14 @@ body {
 
 .project-images {
   display: flex;
-  gap: 15px;         /* space between images */
-  margin-top: 15px;  /* space above images */
-  flex-wrap: wrap;   /* wrap if screen is small */
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: center; /* centers images horizontally */
+  flex-wrap: wrap;         /* wrap on smaller screens */
 }
 
 .project-images img {
-  width: 250px;      /* adjust size as needed */
+  width: 200px;      /* adjust size as needed */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
