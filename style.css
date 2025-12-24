@@ -70,7 +70,7 @@ body {
   box-shadow: 0 8px 16px rgba(0,0,0,0.05);
 }
 
-
+/* IMAGE */
 .project-images {
   display: flex;
   gap: 15px;
@@ -80,13 +80,13 @@ body {
 }
 
 .project-images img {
-  width: 200px;      /* adjust size as needed */
+  width: 300px;      /* adjust size as needed */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
+/* PDF */
 .pdf-container {
   display: flex;
   flex-direction: column; /* stack iframe and link vertically */
@@ -100,6 +100,7 @@ body {
 }
 
 
+/* VIDEO */
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
