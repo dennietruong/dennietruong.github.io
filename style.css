@@ -79,7 +79,7 @@ body {
 }
 
 .project-images img {
-  width: 200px;      /* adjust size as needed */
+  width: 250px;      /* adjust size as needed */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
