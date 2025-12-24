@@ -278,19 +278,20 @@ body.home .hero-subtitle {
 
 
 /* =========================
-   BOTTOM FULL-WIDTH IMAGE (SMALLER)
+   BOTTOM FULL-WIDTH IMAGE 
    ========================= */
 .bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  margin-top: 40px; /* less space above */
+  height: 150px;
+  overflow: hidden;
+  z-index: 0; /* ensures it doesn’t cover content */
 }
 
 .bottom-image img {
   width: 100%;
-  height: 25vh;        /* smaller vertical height */
-  max-height: 300px;   /* optional: cap maximum height */
-  object-fit: cover;   /* crops nicely */
-  display: block;
-  border-radius: 8px;  /* optional: subtle rounding */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* optional: soft shadow */
+  height: 100%;
+  object-fit: cover;
 }
