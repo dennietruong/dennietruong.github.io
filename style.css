@@ -69,3 +69,18 @@ body {
   margin-bottom: 20px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.05);
 }
+
+
+.project-images {
+  display: flex;
+  gap: 15px;         /* space between images */
+  margin-top: 15px;  /* space above images */
+  flex-wrap: wrap;   /* wrap if screen is small */
+}
+
+.project-images img {
+  width: 200px;      /* adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
