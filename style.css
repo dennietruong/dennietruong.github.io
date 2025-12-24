@@ -170,3 +170,25 @@ body {
   font-style: italic;
   color: #555;
 }
+
+
+
+body.home {
+  background-image: url("images/Stadium1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: rgba(11, 28, 45, 0.75); /* overlay */
+  color: white;
+  padding: 40px 20px;
+}
