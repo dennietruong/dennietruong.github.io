@@ -391,7 +391,7 @@ body.home .hero-subtitle {
   background-size: cover;
 
   /* Crop to left, shift slightly right */
-  background-position: 40% center;
+  background-position: 35% center;
 
   background-repeat: no-repeat;
   z-index: 1;
