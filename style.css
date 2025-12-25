@@ -314,6 +314,7 @@ body.home .hero-subtitle {
   position: relative;
   display: flex;
   min-height: 650px;
+  align-items: stretch;
   background: white;
   border-radius: 14px;
   overflow: hidden;
@@ -322,7 +323,7 @@ body.home .hero-subtitle {
 /* Left text column */
 .about-text {
   position: relative;
-  width: 55%;
+  flex: 1;
   padding: 40px;
   z-index: 2;
 }
