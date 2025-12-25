@@ -308,11 +308,12 @@ body.home .hero-subtitle {
   padding: 60px 20px;
 }
 
-/* Container layout */
+/* Container layout with fixed min-height to keep content stable */
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  min-height: 600px; /* adjust height as needed */
+  min-height: 600px; /* ensures tab content stays in same spot */
+  position: relative;
 }
 
 /* Left text column */
@@ -320,8 +321,13 @@ body.home .hero-subtitle {
   flex: 1;
   min-width: 300px;
   padding: 20px;
+  z-index: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
+/* Paragraph styling */
 .about-text p {
   margin-bottom: 20px;
   line-height: 1.7;
@@ -373,25 +379,47 @@ body.home .hero-subtitle {
   max-height: 500px; /* adjust based on content */
 }
 
-/* Right photo as background for right side only */
+/* Right photo as background with animated wavy left border */
 .about-photo {
-  flex: 0 0 50%; /* right half of the page */
+  flex: 0 0 50%;          /* right half of page */
+  height: 100%;
+  position: relative;
   background-image: url('images/sarp_east_2023_-04_53070386136_o.jpg');
-  background-size: cover;           /* fill the div */
-  background-position: left center; /* crop left side */
+  background-size: cover;
+  background-position: center left;
   background-repeat: no-repeat;
+  border-radius: 0 12px 12px 0;
+
+  /* wave effect with clip-path */
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+  animation: wave 6s ease-in-out infinite;
+  transition: all 0.5s ease;
 }
 
-/* Optional: add subtle overlay for better contrast */
+/* Optional subtle overlay for contrast */
 .about-photo::after {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.2); /* subtle dark overlay */
+  background: rgba(0,0,0,0.2);
+  border-radius: 0 12px 12px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* Responsive for mobile */
+/* Wave animation keyframes */
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+  }
+  50% {
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+  }
+}
+
+/* Responsive adjustments */
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;
@@ -399,7 +427,11 @@ body.home .hero-subtitle {
   .about-photo {
     flex: 1 1 100%;
     height: 400px;
+    clip-path: none;
+    animation: none;
+    border-radius: 12px;
     background-position: center top;
   }
 }
+
 
