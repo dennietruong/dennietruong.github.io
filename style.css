@@ -311,7 +311,7 @@ body.home .hero-subtitle {
 .about-container {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: stretch;  /* stretch photo to match text height */
   flex-wrap: wrap;
 }
 
@@ -372,18 +372,25 @@ body.home .hero-subtitle {
   max-height: 500px; /* adjust based on content */
 }
 
-/* Right photo column as background */
+/* Right photo column as background, full height */
 .about-photo {
-  flex: 0 0 500px;             /* width of right column, adjust as needed */
-  height: 600px;                /* height of column, adjust as needed */
+  flex: 1;  /* fill remaining space on right */
+  min-width: 400px;
   border-radius: 12px;
-  background-image: url('images/sarp_east_2023_-04_53070386136_o.jpg'); /* your image */
+  background-image: url('images/sarp_east_2023_-04_53070386136_o.jpg');
   background-size: cover;       /* fill container */
   background-position: left center; /* crop to left side */
   background-repeat: no-repeat;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* optional shadow */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+  transform: scale(1.05);       /* slight zoom for visual effect */
+  transition: transform 0.5s ease;
 }
 
+.about-photo:hover {
+  transform: scale(1.08);       /* subtle zoom on hover */
+}
+
+/* Responsive layout */
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;
@@ -391,6 +398,8 @@ body.home .hero-subtitle {
   .about-photo {
     width: 100%;
     height: 400px;
-    background-position: center top; /* show top part on mobile */
+    background-position: center top; /* important part visible on mobile */
+    transform: scale(1);             /* reset zoom on mobile */
   }
 }
+
