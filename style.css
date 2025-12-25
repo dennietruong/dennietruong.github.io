@@ -372,18 +372,25 @@ body.home .hero-subtitle {
   max-height: 500px; /* adjust based on content */
 }
 
-/* Right photo column */
+/* Right photo column as background */
 .about-photo {
-  flex: 0 0 400px;  /* fixed width */
-  height: 400px;     /* fixed height for cropping */
-  overflow: hidden;
-  border-radius: 10px;
+  flex: 0 0 500px;             /* width of right column, adjust as needed */
+  height: 600px;                /* height of column, adjust as needed */
+  border-radius: 12px;
+  background-image: url('images/sarp_east_2023_-04_53070386136_o.jpg'); /* your image */
+  background-size: cover;       /* fill container */
+  background-position: left center; /* crop to left side */
+  background-repeat: no-repeat;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* optional shadow */
 }
 
-.about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* crops the image */
-  object-position: left;    /* shows the left side of the image */
-  display: block;
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-photo {
+    width: 100%;
+    height: 400px;
+    background-position: center top; /* show top part on mobile */
+  }
 }
