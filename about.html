@@ -27,7 +27,6 @@
     <div class="about-text">
       <h2>About Me</h2>
 
-      <!-- Text -->
       <div class="tab-content active" id="about">
         <p>
           As a recent graduate student from Colby College (2024), I am passionate about 
@@ -81,8 +80,8 @@
 
     </div>
 
-     <!-- Right column: photo as background -->
-      <div class="about-photo"></div>
+    <!-- Right column: background photo with wavy left border -->
+    <div class="about-photo"></div>
 
   </div>
 </section>
@@ -100,12 +99,12 @@
       tabButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Hide all tab contents
+      // Hide all tab contents except "about"
       tabContents.forEach(tc => {
         if(tc.id !== "about") tc.classList.remove('active');
       });
 
-      // Show selected tab with fade
+      // Show selected tab
       const selectedTab = document.getElementById(tab);
       selectedTab.classList.add('active');
     });
