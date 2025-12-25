@@ -359,14 +359,19 @@ body.home .hero-subtitle {
   background: #f77f00;
 }
 
+
 /* Tab content (fixed position so it doesn't jump) */
 .about-main-text {
   margin-top: 25px;
 }
 
-.about-main-text p {
-  margin-bottom: 20px;
-  line-height: 1.7;
+.about-main-text {
+  background: #f1f1f1;                 /* same as tabs */
+  padding: 20px;                        /* space inside box */
+  border-radius: 12px;                  /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  margin-top: 25px;                     /* spacing from heading */
+  line-height: 1.7;                     /* text spacing */
 }
 
 
