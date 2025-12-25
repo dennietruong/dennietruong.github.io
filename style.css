@@ -360,22 +360,25 @@ body.home .hero-subtitle {
 }
 
 /* Tab content (fixed position so it doesn't jump) */
-.tab-content {
-  margin-top: 25px;
+.tab-wrapper .tab-content {
+  position: absolute;
+  inset: 0;
   background: #f1f1f1;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease;
+  transform: translateY(8px);
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.tab-content.active {
+.tab-wrapper .tab-content.active {
   opacity: 1;
-  max-height: 300px;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* Background image panel */
@@ -391,7 +394,7 @@ body.home .hero-subtitle {
   background-size: cover;
 
   /* Crop to left, shift slightly right */
-  background-position: 35% center;
+  background-position: 30% center;
 
   background-repeat: no-repeat;
   z-index: 1;
