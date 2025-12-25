@@ -311,16 +311,18 @@ body.home .hero-subtitle {
 
 /* Container layout */
 .about-container {
+  position: relative;
   display: flex;
-  min-height: 650px;   /* IMPORTANT: gives height */
+  min-height: 650px;
   background: white;
   border-radius: 14px;
-  overflow: hidden;   /* clips image edges */
+  overflow: hidden;
 }
 
 /* Left text column */
 .about-text {
-  flex: 1;
+  position: relative;
+  width: 55%;
   padding: 40px;
   z-index: 2;
 }
@@ -376,35 +378,38 @@ body.home .hero-subtitle {
   max-height: 300px;
 }
 
+/* Background image panel */
 .about-photo {
-  flex: 0 0 45%;
-  min-height: 650px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 65%;              /* extends past middle */
+  height: 100%;
 
   background-image: url("images/sarp_east_2023_-04_53070386136_o.jpg");
   background-size: cover;
 
-  /* Crop to left but shift slightly right */
-  background-position: 38% center;
+  /* Crop to left, shift slightly right */
+  background-position: 45% center;
 
   background-repeat: no-repeat;
-  overflow: hidden;
+  z-index: 1;
 }
 
+/* Dark-to-light fade overlay */
 .about-photo::after {
   content: "";
   position: absolute;
   inset: 0;
 
-  /* Dark fade from left to right */
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.65),  /* darker on left */
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.05)   /* almost clear on right */
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
   );
 }
-
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -413,8 +418,14 @@ body.home .hero-subtitle {
   }
 
   .about-photo {
+    position: relative;
     width: 100%;
-    min-height: 350px;
+    height: 350px;
     background-position: center top;
   }
+
+  .about-text {
+    width: 100%;
+  }
 }
+
