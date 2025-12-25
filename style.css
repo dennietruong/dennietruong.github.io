@@ -380,7 +380,7 @@ body.home .hero-subtitle {
 
 /* Background image panel */
 .about-photo {
-  position: 35% center; 
+  position: absolute;  /* fix */
   top: 0;
   right: 0;
 
