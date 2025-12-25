@@ -379,37 +379,36 @@ body.home .hero-subtitle {
   max-height: 500px; /* adjust based on content */
 }
 
-/* Right photo as background with animated wavy left border */
+/* Right photo as background with wavy left border */
 .about-photo {
-  flex: 0 0 50%;          /* right half of page */
+  flex: 0 0 50%;       /* right half */
   height: 100%;
-  position: relative;
   background-image: url('images/sarp_east_2023_-04_53070386136_o.jpg');
   background-size: cover;
-  background-position: center left;
+  background-position: left center;
   background-repeat: no-repeat;
   border-radius: 0 12px 12px 0;
 
-  /* wave effect with clip-path */
+  /* wave effect */
   clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
-  animation: wave 6s ease-in-out infinite;
-  transition: all 0.5s ease;
+  position: relative;
+  z-index: 0;
 }
 
-/* Optional subtle overlay for contrast */
+/* Optional subtle overlay */
 .about-photo::after {
   content: "";
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.2);
   border-radius: 0 12px 12px 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+  pointer-events: none; /* don’t block clicks */
 }
 
-/* Wave animation keyframes */
+/* Wave animation */
 @keyframes wave {
   0%, 100% {
     clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
@@ -418,6 +417,7 @@ body.home .hero-subtitle {
     clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
   }
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
