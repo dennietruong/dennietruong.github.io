@@ -378,14 +378,43 @@ body.home .hero-subtitle {
 
 /* RIGHT SIDE BACKGROUND IMAGE */
 .about-photo {
-  flex: 0 0 45%;                /* right side width */
-  min-height: 650px;            /* MUST match container */
+  flex: 0 0 45%;
+  min-height: 650px;
+  position: relative;
   background-image: url("images/sarp_east_2023_-04_53070386136_o.jpg");
   background-size: cover;
-  background-position: left center;  /* crop to left */
+  background-position: 75% center; /* shows more right side */
   background-repeat: no-repeat;
-  position: relative;
+  overflow: hidden;
 }
+
+/* Wavy animated edge */
+.about-photo::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  background: white;
+
+  clip-path: path(
+    "M40 0 
+     C80 80, 0 160, 40 240
+     C80 320, 0 400, 40 480
+     C80 560, 0 640, 40 720
+     L0 720 L0 0 Z"
+  );
+
+  animation: waveMove 6s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
 
 /* Soft overlay for readability */
 .about-photo::after {
