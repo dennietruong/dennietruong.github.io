@@ -359,23 +359,31 @@ body.home .hero-subtitle {
   background: #f77f00;
 }
 
+
+/* Tab content (fixed position so it doesn't jump) */
+.about-main-text {
+  margin-top: 25px;
+}
+
 /* Main About Me text box */
 .about-main-text {
-  background: #f1f1f1;                 
-  padding: 25px;                        
-  border-radius: 12px;                  
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #f1f1f1;                 /* box background */
+  padding: 25px;                        /* spacing inside box */
+  border-radius: 12px;                  /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
   margin-bottom: 25px;
-  z-index: 2;                            
+  z-index: 2;                            /* on top of background */
   position: relative;
   line-height: 1.7;
 }
 
-/* Tabs */
+
+
+/* Tabs only */
 .tab-wrapper {
   position: relative;
   margin-top: 25px;
-  height: 220px; /* fixed space so tabs don't jump */
+  height: 220px; /* fixed space for tabs */
 }
 
 .tab-wrapper .tab-content {
@@ -400,19 +408,26 @@ body.home .hero-subtitle {
   pointer-events: auto;
 }
 
-/* Right background photo with wavy/angled left edge */
+
+
+
+/* Background image panel */
 .about-photo {
-  position: absolute;
+  position: absolute;  /* fix */
   top: 0;
   right: 0;
-  width: 55%;
+
+  width: 55%;              /* extends past middle */
   height: 100%;
+
   background-image: url("images/sarp_east_2023_-04_53070386136_o.jpg");
   background-size: cover;
-  background-position: 35% center; /* crop to left but shift right */
+
+  /* Crop to left, shift slightly right */
+  background-position: 25% center;
+
   background-repeat: no-repeat;
   z-index: 1;
-  clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 20px 100%, 0% 50%); /* angled/wavy left edge */
 }
 
 /* Dark-to-light fade overlay */
@@ -440,17 +455,7 @@ body.home .hero-subtitle {
     width: 100%;
     height: 350px;
     background-position: center top;
-    clip-path: none; /* remove angled edge on mobile */
   }
-
-  .about-text {
-    width: 100%;
-  }
-
-  .tab-wrapper {
-    height: auto;
-  }
-}
 
   .about-text {
     width: 100%;
