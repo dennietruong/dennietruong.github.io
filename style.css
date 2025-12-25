@@ -308,17 +308,18 @@ body.home .hero-subtitle {
   padding: 60px 20px;
 }
 
+/* Container layout */
 .about-container {
   display: flex;
-  gap: 40px;
-  align-items: stretch;  /* stretch photo to match text height */
   flex-wrap: wrap;
+  min-height: 600px; /* adjust height as needed */
 }
 
 /* Left text column */
 .about-text {
   flex: 1;
   min-width: 300px;
+  padding: 20px;
 }
 
 .about-text p {
@@ -372,34 +373,33 @@ body.home .hero-subtitle {
   max-height: 500px; /* adjust based on content */
 }
 
-/* Right photo column as background, full height */
+/* Right photo as background for right side only */
 .about-photo {
-  flex: 1;  /* fill remaining space on right */
-  min-width: 400px;
-  border-radius: 12px;
+  flex: 0 0 50%; /* right half of the page */
   background-image: url('images/sarp_east_2023_-04_53070386136_o.jpg');
-  background-size: cover;       /* fill container */
-  background-position: left center; /* crop to left side */
+  background-size: cover;           /* fill the div */
+  background-position: left center; /* crop left side */
   background-repeat: no-repeat;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
-  transform: scale(1.05);       /* slight zoom for visual effect */
-  transition: transform 0.5s ease;
 }
 
-.about-photo:hover {
-  transform: scale(1.08);       /* subtle zoom on hover */
+/* Optional: add subtle overlay for better contrast */
+.about-photo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2); /* subtle dark overlay */
 }
 
-/* Responsive layout */
+/* Responsive for mobile */
 @media (max-width: 900px) {
   .about-container {
     flex-direction: column;
   }
   .about-photo {
-    width: 100%;
+    flex: 1 1 100%;
     height: 400px;
-    background-position: center top; /* important part visible on mobile */
-    transform: scale(1);             /* reset zoom on mobile */
+    background-position: center top;
   }
 }
 
