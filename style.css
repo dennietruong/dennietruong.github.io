@@ -307,7 +307,6 @@ body.home .hero-subtitle {
   max-width: 1100px;
   margin: auto;
   padding: 60px 20px;
-  position: relative;
 }
 
 /* Container layout */
@@ -317,16 +316,15 @@ body.home .hero-subtitle {
   min-height: 650px;
   background: white;
   border-radius: 14px;
-  overflow: visible; /* allow image to extend */
+  overflow: hidden;
 }
 
 /* Left text column */
 .about-text {
   position: relative;
-  flex: 1;
+  width: 55%;
   padding: 40px;
   z-index: 2;
-  max-width: 55%; /* space for image to overlap */
 }
 
 .about-text p {
@@ -361,55 +359,42 @@ body.home .hero-subtitle {
   background: #f77f00;
 }
 
-/* Tab content wrapper: fixed space so content doesn't jump */
-.tab-wrapper {
-  position: relative;
-  margin-top: 25px;
-  min-height: 220px; /* adjust height based on content */
-}
-
-/* All tabs stacked in same spot */
+/* Tab content (fixed position so it doesn't jump) */
 .tab-content {
-  position: absolute;
-  inset: 0;
-
+  margin-top: 25px;
   background: #f1f1f1;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
   opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
 }
 
 .tab-content.active {
   opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  max-height: 300px;
 }
 
-/* Right photo as background with wavy left edge */
+/* Background image panel */
 .about-photo {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;         /* extend past middle */
+
+  width: 65%;              /* extends past middle */
   height: 100%;
-  z-index: 1;
 
   background-image: url("images/sarp_east_2023_-04_53070386136_o.jpg");
   background-size: cover;
-  background-position: 30% center; /* crop to left but show more right side */
-  background-repeat: no-repeat;
 
-  /* Wavy left edge using clip-path */
-  clip-path: polygon(
-    30px 0%, 0% 50px, 30px 100%, 
-    100% 100%, 100% 0%
-  );
+  /* Crop to left, shift slightly right */
+  background-position: 45% center;
+
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 /* Dark-to-light fade overlay */
@@ -417,11 +402,12 @@ body.home .hero-subtitle {
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.1)
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
   );
 }
 
@@ -431,15 +417,14 @@ body.home .hero-subtitle {
     flex-direction: column;
   }
 
-  .about-text {
-    max-width: 100%;
-  }
-
   .about-photo {
     position: relative;
     width: 100%;
     height: 350px;
-    clip-path: none;
     background-position: center top;
+  }
+
+  .about-text {
+    width: 100%;
   }
 }
