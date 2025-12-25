@@ -360,9 +360,28 @@ body.home .hero-subtitle {
 }
 
 /* Tab content (fixed position so it doesn't jump) */
+.about-main-text {
+  margin-top: 25px;
+}
+
+.about-main-text p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+
+
+/* Tabs only */
+.tab-wrapper {
+  position: relative;
+  margin-top: 25px;
+  height: 220px; /* fixed space for tabs */
+}
+
 .tab-wrapper .tab-content {
   position: absolute;
   inset: 0;
+
   background: #f1f1f1;
   padding: 20px;
   border-radius: 12px;
@@ -380,6 +399,9 @@ body.home .hero-subtitle {
   transform: translateY(0);
   pointer-events: auto;
 }
+
+
+
 
 /* Background image panel */
 .about-photo {
