@@ -307,6 +307,7 @@ body.home .hero-subtitle {
   max-width: 1100px;
   margin: auto;
   padding: 60px 20px;
+  position: relative;
 }
 
 /* Container layout */
@@ -314,10 +315,9 @@ body.home .hero-subtitle {
   position: relative;
   display: flex;
   min-height: 650px;
-  align-items: stretch;
   background: white;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible; /* allow image to extend */
 }
 
 /* Left text column */
@@ -326,6 +326,7 @@ body.home .hero-subtitle {
   flex: 1;
   padding: 40px;
   z-index: 2;
+  max-width: 55%; /* space for image to overlap */
 }
 
 .about-text p {
@@ -360,16 +361,14 @@ body.home .hero-subtitle {
   background: #f77f00;
 }
 
-
-
-/* Tab content */
+/* Tab content wrapper: fixed space so content doesn't jump */
 .tab-wrapper {
   position: relative;
   margin-top: 25px;
-  height: 220px; /* FIXED SPACE so tabs never jump */
+  min-height: 220px; /* adjust height based on content */
 }
 
-/* All tabs stack in same spot */
+/* All tabs stacked in same spot */
 .tab-content {
   position: absolute;
   inset: 0;
@@ -392,24 +391,25 @@ body.home .hero-subtitle {
   pointer-events: auto;
 }
 
-
-/* Background image panel */
+/* Right photo as background with wavy left edge */
 .about-photo {
   position: absolute;
   top: 0;
   right: 0;
-
-  width: 58%;              /* extends past middle */
+  width: 60%;         /* extend past middle */
   height: 100%;
+  z-index: 1;
 
   background-image: url("images/sarp_east_2023_-04_53070386136_o.jpg");
   background-size: cover;
-
-  /* Crop to left, shift slightly right */
-  background-position: 20% center;
-
+  background-position: 30% center; /* crop to left but show more right side */
   background-repeat: no-repeat;
-  z-index: 1;
+
+  /* Wavy left edge using clip-path */
+  clip-path: polygon(
+    30px 0%, 0% 50px, 30px 100%, 
+    100% 100%, 100% 0%
+  );
 }
 
 /* Dark-to-light fade overlay */
@@ -417,12 +417,11 @@ body.home .hero-subtitle {
   content: "";
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.1)
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.1)
   );
 }
 
@@ -432,15 +431,15 @@ body.home .hero-subtitle {
     flex-direction: column;
   }
 
+  .about-text {
+    max-width: 100%;
+  }
+
   .about-photo {
     position: relative;
     width: 100%;
     height: 350px;
+    clip-path: none;
     background-position: center top;
   }
-
-  .about-text {
-    width: 100%;
-  }
 }
-
