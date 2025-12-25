@@ -372,6 +372,8 @@ body.home .hero-subtitle {
   border-radius: 12px;                  /* rounded corners */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
   margin-bottom: 25px;
+  width: 100%;
+  max-width: 500px;                     /* ~half page width */
   z-index: 2;                            /* on top of background */
   position: relative;
   line-height: 1.7;
