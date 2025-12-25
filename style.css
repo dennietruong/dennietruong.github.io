@@ -279,7 +279,7 @@ body.home .hero-subtitle {
 
 
 /* =========================
-   BOTTOM IMAGE AS PART OF PAGE
+   CONTACT BOTTOM IMAGE AS PART OF PAGE
    ========================= */
 .bottom-image {
   width: 100%;
@@ -297,3 +297,74 @@ body.home .hero-subtitle {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* optional: soft shadow */
 }
 
+
+
+/*  =========================
+  About page layout 
+ =========================*/
+.about-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.about-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 28px;
+  border-radius: 25px;
+  background: #e63946;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+  background: #d62839;
+}
+
+.tab-btn.active {
+  background: #f77f00;
+}
+
+/* Tab content */
+.tab-content {
+  margin-top: 25px;
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Photo on right, crop left side */
+.about-photo {
+  flex: 0 0 350px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
