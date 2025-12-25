@@ -353,13 +353,23 @@ body.home .hero-subtitle {
   background: #f77f00;
 }
 
-/* Tab content */
+/* Tab content with fade */
 .tab-content {
   margin-top: 25px;
   background: #f1f1f1;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.tab-content.active {
+  opacity: 1;
+  max-height: 500px; /* adjust as needed */
 }
 
 /* Photo on right */
