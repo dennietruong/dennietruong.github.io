@@ -365,13 +365,16 @@ body.home .hero-subtitle {
   margin-top: 25px;
 }
 
+/* Main About Me text box */
 .about-main-text {
-  background: #f1f1f1;                 /* same as tabs */
-  padding: 20px;                        /* space inside box */
+  background: #f1f1f1;                 /* box background */
+  padding: 25px;                        /* spacing inside box */
   border-radius: 12px;                  /* rounded corners */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
-  margin-top: 25px;                     /* spacing from heading */
-  line-height: 1.7;                     /* text spacing */
+  margin-bottom: 25px;
+  z-index: 2;                            /* on top of background */
+  position: relative;
+  line-height: 1.7;
 }
 
 
