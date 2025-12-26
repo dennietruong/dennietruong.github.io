@@ -332,6 +332,33 @@ body.home .hero-subtitle {
   line-height: 1.7;
 }
 
+
+/* Read more style */
+.read-more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.about-main-text.expanded .read-more-content {
+  max-height: 500px; /* large enough to fit content */
+}
+
+.read-more-btn {
+  margin-top: 15px;
+  background: none;
+  border: none;
+  color: #e63946;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+
 /* Buttons */
 .about-buttons {
   margin-top: 25px;
