@@ -105,33 +105,6 @@
 </section>
 
     <script>
-          // Tab functionality with fade
-          const tabButtons = document.querySelectorAll('.tab-btn');
-          const tabContents = document.querySelectorAll('.tab-content');
-      
-          tabButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-              const tab = btn.getAttribute('data-tab');
-    
-          // Remove active class from buttons
-          tabButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-    
-          // Hide all tab contents except "about"
-          tabContents.forEach(tc => {
-            if(tc.id !== "about") tc.classList.remove('active');
-          });
-    
-          // Show selected tab
-          const selectedTab = document.getElementById(tab);
-          selectedTab.classList.add('active');
-        });
-      });
-  </script>
-
-
-  / Different picture for each tab
-    <script>
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     const aboutPhoto = document.querySelector('.about-photo');
@@ -158,7 +131,7 @@
         }
       });
     });
-    </script>
+</script>
 
   
 </body>
