@@ -166,19 +166,16 @@
 
 
       <script>
-        const readMoreBtn = document.querySelector('.read-more-btn');
-        const aboutMainText = document.querySelector('.about-main-text');
+      const readMoreBtn = document.querySelector('.read-more-btn');
+      const readMoreContent = document.querySelector('.read-more-content');
       
-        if (readMoreBtn && aboutMainText) {
-          readMoreBtn.addEventListener('click', () => {
-            aboutMainText.classList.toggle('expanded');
-      
-            readMoreBtn.textContent =
-              aboutMainText.classList.contains('expanded')
-                ? 'Read less'
-                : 'Read more';
-          });
-        }
+      if (readMoreBtn && readMoreContent) {
+        readMoreBtn.addEventListener('click', () => {
+          readMoreContent.classList.toggle('expanded');
+          readMoreBtn.textContent = readMoreContent.classList.contains('expanded') ? 'Read less' : 'Read more';
+        });
+      }
+
       </script>
 
 
