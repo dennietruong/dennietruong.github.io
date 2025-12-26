@@ -226,6 +226,8 @@ body.home .hero-subtitle {
   box-shadow: 0 4px 14px rgba(0,0,0,0.2);
 }
 
+
+
 /* =========================
    CONTACT PAGE
    ========================= */
@@ -278,9 +280,7 @@ body.home .hero-subtitle {
 
 
 
-/* =========================
-   CONTACT BOTTOM IMAGE AS PART OF PAGE
-   ========================= */
+/*CONTACT BOTTOM IMAGE AS PART OF PAGE*/
 .bottom-image {
   width: 100%;
   margin-top: 40px;       /* space between content and image */
@@ -465,14 +465,13 @@ body.home .hero-subtitle {
 }
 
 
-/* ABOUT Page Header */
+/* Page Header */
 .page-header {
   width: 100%;
   height: 300px;
-  background-image: url("images/Stadium2.jpg"); 
   background-size: cover;
-  background-position: center 25%;
   position: relative;
+  margin-top: 70px;
 }
 
 .page-header-overlay {
@@ -490,4 +489,14 @@ body.home .hero-subtitle {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+.about-page .page-header {
+  background-image: url("../images/Stadium2.jpg");
+  background-position: center 80%;
+}
+
+.projects-page .page-header {
+  background-image: url("../images/Stadium3.jpg");
+  background-position: center;
 }
