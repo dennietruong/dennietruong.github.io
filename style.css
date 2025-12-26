@@ -382,34 +382,40 @@ body.home .hero-subtitle {
 
 
 
-/* Tabs only */
+/* Tabs styles */
 .tab-wrapper {
-  position: relative;
   margin-top: 25px;
 }
 
+/* All tabs */
 .tab-wrapper .tab-content {
-  position: absolute;
-  inset: 0;
+  display: none;
 
   background: #f1f1f1;
-  padding: 20px;
+  padding: 22px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  line-height: 1.7;
 }
 
+/* Active tab */
 .tab-wrapper .tab-content.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  display: block;
+  animation: fadeUp 0.3s ease;
 }
 
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
