@@ -29,22 +29,19 @@
   </header>
 
   <!-- Projects Section -->
-  <section class="projects-section">
+  <section class="content projects-section">
 
-    <!-- Table of Contents -->
-    <div class="projects-toc">
-      <h2>Projects</h2>
-      <ul>
-        <li data-project="sarp">NASA Student Airborne Research Program (2023)</li>
-        <li data-project="bigelow">Bigelow Laboratory for Ocean Sciences (2022-2025)</li>
-      </ul>
+    <!-- Project Selector / TOC -->
+    <div class="project-selector">
+      <button data-project="sarp" class="active">NASA SARP (2023)</button>
+      <button data-project="bigelow">Bigelow Lab (2022-2025)</button>
     </div>
 
-    <!-- Project Content -->
-    <div class="projects-content">
+    <!-- Project Cards -->
+    <div class="project-cards">
 
       <!-- Project 1 -->
-      <div class="project-card" id="sarp">
+      <div class="card project-card" id="sarp">
         <h3>NASA Student Airborne Research Program (2023)</h3>
         <p>Algal bloom is a rapid increase or accumulation of algae in a body of water caused by excess nutrients,
           usually from agricultural runoff or sewage effluent. The effects of blooms are devastating and 
@@ -53,21 +50,18 @@
           I developed models and used LANDSAT imagery to improve environmental monitoring efforts.</p>
         <a href="https://github.com/dennietruong/AlgalBloomSARP">View on GitHub</a>
 
-        <!-- Images -->
         <div class="project-images">
           <img src="images/IMG_0265.jpg" alt="Image 1" />
           <img src="images/sarp_east_2023_-07_53070888093_o.jpg" alt="Image 2" />
           <img src="images/sarp_east_2023_-06_53070888108_o.jpg" alt="Image 3" />
         </div>
 
-        <!-- Video -->
         <div class="video-container">
           <video width="600" height="340" controls>
             <source src="videos/NASASARPEAST2023.mp4" type="video/mp4">
           </video>
         </div>
 
-        <!-- PDF -->
         <div class="pdf-container">
           <iframe src="files/SARPEast2023_DTruong.pdf" width="650" height="400" style="border:2px solid #ccc;"></iframe>
           <p><a href="files/SARPEast2023_DTruong.pdf" target="_blank">Click to view full PDF</a></p>
@@ -75,7 +69,7 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="project-card" id="bigelow">
+      <div class="card project-card" id="bigelow">
         <h3>Bigelow Laboratory for Ocean Sciences (2022-2025)</h3>
         <p>Beginning in 2013, a massive die-off known as sea star wasting impacted billions of sea stars across more than 20 species 
           along the west coast of North America. We suspected that domoic acid, a toxin produced by algae, could weaken sea stars’ bodies 
@@ -86,18 +80,15 @@
         <p>The full manuscript is available upon request from the authors, as the publisher does not permit public posting online.</p>
         <a href="https://www.int-res.com/abstracts/dao/v163/dao03864">Publication Abstract</a>
 
-        <!-- Images -->
         <div class="project-images">
           <img src="images/IMG_20221025_100433307.jpg" alt="Image 1" />
           <img src="images/IMG_20221107_160255450_HDR.jpg" alt="Image 2" />
           <img src="images/IMG_20221107_160332411_HDR.jpg" alt="Image 3" />
         </div>
 
-        <!-- News -->
         <p><a href="https://www.the-microbiologist.com/news/new-study-finds-concerning-sea-star-response-to-an-algal-neurotoxin/6622.article">In the News</a></p>
         <p><a href="https://phys.org/news/2025-08-sea-star-response-neurotoxin.html">In the News</a></p>
 
-        <!-- PDF -->
         <div class="pdf-container">
           <iframe src="files/ESAPosterFinal_DT.pdf" width="650" height="400" style="border:2px solid #ccc;"></iframe>
           <p><a href="files/ESAPosterFinal_DT.pdf" target="_blank">Click to view full PDF</a></p>
@@ -107,27 +98,25 @@
     </div>
   </section>
 
-  <!-- JavaScript to switch projects -->
+  <!-- JS to switch projects -->
   <script>
-    const tocItems = document.querySelectorAll('.projects-toc li');
-    const projects = document.querySelectorAll('.project-card');
+    const selectorButtons = document.querySelectorAll('.project-selector button');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    tocItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const targetId = item.getAttribute('data-project');
+    function showProject(id) {
+      projectCards.forEach(card => card.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
 
-        // Highlight active TOC item
-        tocItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
+      selectorButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`button[data-project="${id}"]`).classList.add('active');
+    }
 
-        // Show the corresponding project
-        projects.forEach(p => p.classList.remove('active'));
-        document.getElementById(targetId).classList.add('active');
-      });
+    selectorButtons.forEach(btn => {
+      btn.addEventListener('click', () => showProject(btn.getAttribute('data-project')));
     });
 
-    // Show first project on page load
-    tocItems[0].click();
+    // Show first project by default
+    showProject('sarp');
   </script>
 
 </body>
