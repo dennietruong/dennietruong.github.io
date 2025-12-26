@@ -300,7 +300,7 @@ body.home .hero-subtitle {
 
 
 /* =========================
-   About page layout
+    ABOUT PAGE
 ========================= */
 
 .about-section {
@@ -606,4 +606,68 @@ Read more style on ABOUT page
 .projects-page .page-header {
   background-image: url("../images/Stadium2.jpg");
   background-position: center 25%;
+}
+
+
+
+/* ====================
+  PROJECT PAGE
+======================*/
+.projects-section {
+  display: flex;
+  max-width: 1100px;
+  margin: auto;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.projects-toc {
+  flex: 1;
+}
+
+.projects-toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projects-toc li {
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #f1f1f1;
+  transition: background 0.25s ease;
+}
+
+.projects-toc li:hover,
+.projects-toc li.active {
+  background: #e63946;
+  color: white;
+}
+
+.projects-content {
+  flex: 3;
+}
+
+.project-card {
+  display: none;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* Show active project */
+.project-card.active {
+  display: block;
+}
+
+/* Responsive: TOC on top */
+@media (max-width: 900px) {
+  .projects-section {
+    flex-direction: column;
+  }
+  .projects-toc {
+    margin-bottom: 25px;
+  }
 }
