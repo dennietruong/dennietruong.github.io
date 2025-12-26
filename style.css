@@ -621,6 +621,7 @@ Read more style on ABOUT page
   padding: 60px 20px;
 }
 
+/* Table of Contents (Project Selector) */
 .projects-toc {
   flex: 1;
 }
@@ -628,33 +629,52 @@ Read more style on ABOUT page
 .projects-toc ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .projects-toc li {
   cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  background: #f1f1f1;
-  transition: background 0.25s ease;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #fff;
+  color: #e63946;
+  font-weight: 600;
+  border: 2px solid #e63946;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.projects-toc li:hover,
+.projects-toc li:hover {
+  background: #e63946;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .projects-toc li.active {
   background: #e63946;
-  color: white;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(0);
+  border-bottom: 2px solid #fff; /* makes active tab “connected” visually */
 }
 
+/* Projects Content */
 .projects-content {
   flex: 3;
 }
 
+/* Individual Project Cards */
 .project-card {
   display: none;
   background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
 }
 
 /* Show active project */
@@ -667,7 +687,20 @@ Read more style on ABOUT page
   .projects-section {
     flex-direction: column;
   }
+
   .projects-toc {
     margin-bottom: 25px;
+  }
+
+  .projects-toc ul {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .projects-toc li {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    font-size: 0.95rem;
   }
 }
