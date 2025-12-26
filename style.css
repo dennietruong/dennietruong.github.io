@@ -386,7 +386,6 @@ body.home .hero-subtitle {
 .tab-wrapper {
   position: relative;
   margin-top: 25px;
-  height: 220px; /* fixed space for tabs */
 }
 
 .tab-wrapper .tab-content {
