@@ -365,6 +365,7 @@ body.home .hero-subtitle {
   margin-top: 25px;
 }
 
+
 /* Main About Me text box */
 .about-main-text {
   background: #f1f1f1;                 /* box background */
@@ -412,7 +413,6 @@ body.home .hero-subtitle {
 
 
 
-
 /* Background image panel */
 .about-photo {
   position: absolute;  /* fix */
@@ -424,7 +424,7 @@ body.home .hero-subtitle {
 
   background-image: url("images/AboutImage1.jpg");
   background-size: cover;
-  background-position: center 70%;
+  background-position: center 75%;
   background-repeat: no-repeat;
   transition: background-image 0.5s ease-in-out;
   z-index: 1;
