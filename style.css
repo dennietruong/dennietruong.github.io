@@ -492,10 +492,10 @@ body.home .hero-subtitle {
 
 .about-page .page-header {
   background-image: url("../images/Stadium2.jpg");
-  background-position: center 80%;
+  background-position: center 75%;
 }
 
 .projects-page .page-header {
   background-image: url("../images/Stadium3.jpg");
-  background-position: center;
+  background-position: center 45%;
 }
