@@ -74,7 +74,7 @@
 
       <!-- Buttons -->
       <div class="about-buttons">
-      <button class="tab-btn active" data-tab="hobbies" 
+      <button class="tab-btn" data-tab="hobbies" 
               data-image="images/AboutImage2.jpg" 
               data-position="center">Hobbies</button>
       
@@ -163,6 +163,26 @@
       });
     });
 </script>
+
+
+      <script>
+        const readMoreBtn = document.querySelector('.read-more-btn');
+        const aboutMainText = document.querySelector('.about-main-text');
+      
+        if (readMoreBtn && aboutMainText) {
+          readMoreBtn.addEventListener('click', () => {
+            aboutMainText.classList.toggle('expanded');
+      
+            readMoreBtn.textContent =
+              aboutMainText.classList.contains('expanded')
+                ? 'Read less'
+                : 'Read more';
+          });
+        }
+      </script>
+
+
+
 
   
 </body>
