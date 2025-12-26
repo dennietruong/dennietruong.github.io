@@ -670,8 +670,8 @@ Read more style on ABOUT page
 /* PROJECT SELECTOR (TABS)*/
 .project-selector {
   display: flex;
-  gap: 14px;
-  margin-bottom: 35px;
+  gap: 10px;
+  margin-bottom: 28px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -679,9 +679,9 @@ Read more style on ABOUT page
 .project-selector button {
   appearance: none;
   border: none;
-  padding: 14px 28px;
-  border-radius: 999px; /* pill shape */
-  font-size: 0.95rem;
+  padding: 9px 18px;          /* smaller padding */
+  border-radius: 999px;
+  font-size: 0.82rem;         /* smaller text */
   font-weight: 600;
   cursor: pointer;
 
@@ -689,34 +689,27 @@ Read more style on ABOUT page
   color: #1d3557;
 
   box-shadow:
-    0 6px 14px rgba(0,0,0,0.08),
-    inset 0 0 0 1.5px rgba(29,53,87,0.15);
+    0 4px 10px rgba(0,0,0,0.08),
+    inset 0 0 0 1.25px rgba(29,53,87,0.15);
 
-  transition: all 0.25s ease;
+  transition: all 0.22s ease;
 }
 
-/* Hover state */
+/* Hover */
 .project-selector button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow:
-    0 10px 22px rgba(0,0,0,0.12),
-    inset 0 0 0 1.5px rgba(29,53,87,0.25);
+    0 6px 14px rgba(0,0,0,0.12),
+    inset 0 0 0 1.25px rgba(29,53,87,0.25);
 }
 
-/* Active tab */
+/* Active */
 .project-selector button.active {
-  background: linear-gradient(
-    135deg,
-    #e63946,
-    #f77f00
-  );
+  background: linear-gradient(135deg, #e63946, #f77f00);
   color: white;
-
-  box-shadow:
-    0 10px 24px rgba(230,57,70,0.35);
-
-  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(230,57,70,0.3);
 }
+
 
 /* Optional: subtle click effect */
 .project-selector button:active {
