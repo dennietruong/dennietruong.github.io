@@ -415,34 +415,32 @@ body.home .hero-subtitle {
 
 /* Background image panel */
 .about-photo {
-  position: absolute;  /* fix */
+  position: absolute;
   top: 0;
   right: 0;
-
-  width: 55%;              /* extends past middle */
+  width: 55%;
   height: 100%;
-
   background-image: url("images/AboutImage1.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center; /* initial default */
   background-repeat: no-repeat;
-  transition: background-image 0.5s ease-in-out;
+  transition: background-image 0.5s ease-in-out, background-position 0.5s ease-in-out; /* add position transition */
   z-index: 1;
 }
 
-/* Dark-to-light fade overlay */
 .about-photo::after {
   content: "";
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.75),
     rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.1)
   );
+  pointer-events: none; /* <-- allows interaction with the parent */
 }
+
 
 /* Responsive */
 @media (max-width: 900px) {
