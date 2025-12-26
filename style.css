@@ -621,6 +621,12 @@ Read more style on ABOUT page
   padding: 60px 20px;
 }
 
+.large-gif {
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+}
+
 /* Table of Contents (Project Selector) */
 .projects-toc {
   flex: 1;
