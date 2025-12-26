@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,23 +10,23 @@
 <body>
 
 <nav class="navbar">
-  <div class="nav-container">
-    <a class="logo" href="index.html">Dennie Truong</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
+    <div class="nav-container">
+      <a class="logo" href="index.html">Dennie Truong</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
 </nav>
 
-  <!-- Picture Header -->
-  <header class="page-header">
-  <div class="page-header-overlay">
-    <h1>About Me</h1>
-  </div>
-</header>
+    <!-- Picture Header -->
+    <header class="page-header">
+      <div class="page-header-overlay">
+        <h1>About Me</h1>
+      </div>
+    </header>
 
   
 <section class="content about-section">
@@ -72,6 +73,8 @@
         <button class="tab-btn" data-tab="coaching">Coaching</button>
       </div>
 
+
+        
       <!-- Tab content sections -->
       <div class="tab-wrapper">
 
@@ -93,36 +96,38 @@
     </div>
   </div>
 
+
+        
     <!-- Right column: background photo with wavy left border -->
     <div class="about-photo"></div>
 
   </div>
 </section>
 
-<script>
-  // Tab functionality with fade
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = btn.getAttribute('data-tab');
-
-      // Remove active class from buttons
-      tabButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Hide all tab contents except "about"
-      tabContents.forEach(tc => {
-        if(tc.id !== "about") tc.classList.remove('active');
+    <script>
+        // Tab functionality with fade
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+      
+        tabButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const tab = btn.getAttribute('data-tab');
+    
+          // Remove active class from buttons
+          tabButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+    
+          // Hide all tab contents except "about"
+          tabContents.forEach(tc => {
+            if(tc.id !== "about") tc.classList.remove('active');
+          });
+    
+          // Show selected tab
+          const selectedTab = document.getElementById(tab);
+          selectedTab.classList.add('active');
+        });
       });
-
-      // Show selected tab
-      const selectedTab = document.getElementById(tab);
-      selectedTab.classList.add('active');
-    });
-  });
-</script>
+  </script>
 
 </body>
 </html>
