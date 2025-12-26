@@ -422,13 +422,11 @@ body.home .hero-subtitle {
   width: 55%;              /* extends past middle */
   height: 100%;
 
-  background-image: url("images/sarp_east_2023_-04_53070386136_o.jpg");
+  background-image: url("images/AboutImage1.jpg");
   background-size: cover;
-
-  /* Crop to left, shift slightly right */
-  background-position: 25% center;
-
+  background-position: center 60%;
   background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
   z-index: 1;
 }
 
