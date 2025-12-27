@@ -727,7 +727,7 @@ Read more style on ABOUT page
 /* Individual Project Cards */
 .project-card {
   display: none;
-  max-width: 700px; /* ensures all cards take the same horizontal space */
+  max-width: 800px; /* ensures all cards take the same horizontal space */
   background: white;
   padding: 25px;
   border-radius: 12px;
@@ -769,7 +769,7 @@ Read more style on ABOUT page
   display: inline-flex;       /* shrink-wrap to content */
   flex-direction: column;     /* stack buttons vertically */
   align-items: stretch;       /* buttons fill width */
-  background: white;
+  background: transparent;    /* removed background */
   border-radius: 14px;
   padding: 14px 20px;         /* space inside rectangle */
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
