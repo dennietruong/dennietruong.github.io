@@ -618,15 +618,19 @@ Read more style on ABOUT page
   display: flex;
   max-width: 1100px;
   margin: auto;
-  gap: 40px;
   padding: 60px 20px;
+  gap: 40px;
 }
 
 
 /* Table of Contents (Project Selector) */
-.projects-toc {
+/*.projects-toc {
   flex: 0 0 auto;       /* don’t grow, don’t shrink, fit content */
   align-self: flex-start; /* make it fit content vertically at top */
+}*/
+/* TOC = 1/4 width */
+.projects-toc {
+  flex: 0 0 25%;
 }
 
 
@@ -667,8 +671,12 @@ Read more style on ABOUT page
 }
 
 /* Projects Content */
-.projects-content {
+/*.projects-content {
   flex: 3;
+}*/
+/* Main content = 3/4 width */
+.projects-content {
+  flex: 0 0 75%;
 }
 
 /* Project Selector (TABS)*/
@@ -727,7 +735,7 @@ Read more style on ABOUT page
 /* Individual Project Cards */
 .project-card {
   display: none;
-  max-width: 800px; /* ensures all cards take the same horizontal space */
+  /*max-width: 800px;  ensures all cards take the same horizontal space */
   background: white;
   padding: 25px;
   border-radius: 12px;
@@ -760,12 +768,13 @@ Read more style on ABOUT page
     flex: 0 0 auto;
     padding: 10px 18px;
     font-size: 0.95rem;
+    width: 100%;
   }
 }
 
 
 /* Project Toc Bar (Table of Content)*/
-.projects-toc-bar {
+/*.projects-toc-bar {
   display: inline-flex;       /* shrink-wrap to content */
   flex-direction: column;     /* stack buttons vertically */
   align-items: stretch;       /* buttons fill width */
@@ -775,9 +784,17 @@ Read more style on ABOUT page
   box-shadow: none; /*0 8px 20px rgba(0,0,0,0.08);*/
   width: fit-content;         /* shrink-wrap width to buttons */
   margin: 0 auto;             /* center rectangle horizontally */
+}*/
+
+.projects-toc-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  padding: 14px 0;
+  background: transparent;
+  box-shadow: none;
 }
-
-
 
 
 /* Label */
