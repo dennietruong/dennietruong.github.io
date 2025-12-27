@@ -762,7 +762,7 @@ Read more style on ABOUT page
 /* Project Toc Bar (Table of Content)*/
 .projects-toc-bar {
   width: 100%;
-  max-width: 275px;        
+  max-width: 260px;        
   margin: 0 auto 35px;     /* center horizontally */
   background: white;
   border-radius: 14px;
