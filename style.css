@@ -744,7 +744,7 @@ Read more style on ABOUT page
   }
 
   .projects-toc {
-    margin-bottom: 25px;
+    flex: 0 0 auto;
   }
 
   .projects-toc ul {
