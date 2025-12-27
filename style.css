@@ -763,17 +763,17 @@ Read more style on ABOUT page
 
 /* Project Toc Bar (Table of Content)*/
 .projects-toc-bar {
-  width: 240px;            /* fits buttons nicely */
-  margin: 0 auto 35px;     /* center horizontally */
+  display: inline-block;         /* shrink-wrap to content */
+  margin: 0 auto 35px;           /* center horizontally */
   background: white;
   border-radius: 14px;
-  padding: 14px 20px;      /* vertical and horizontal padding */
+  padding: 14px 20px;            /* vertical + horizontal padding */
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  text-align: center;            /* center the buttons */
 }
+
 
 
 
