@@ -772,7 +772,7 @@ Read more style on ABOUT page
   background: transparent;    /* removed background */
   border-radius: 14px;
   padding: 14px 20px;         /* space inside rectangle */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: none; /*0 8px 20px rgba(0,0,0,0.08);*/
   width: fit-content;         /* shrink-wrap width to buttons */
   margin: 0 auto;             /* center rectangle horizontally */
 }
