@@ -760,14 +760,16 @@ Read more style on ABOUT page
 
 
 /* Project Toc Bar (Table of Content)*/
-
 .projects-toc-bar {
+  width: 100%;
+  max-width: 300px;        
+  margin: 0 auto 35px;     /* center horizontally */
   background: white;
   border-radius: 14px;
   padding: 22px 20px 26px;
-  margin-bottom: 35px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
 
 /* Label */
 .toc-label {
