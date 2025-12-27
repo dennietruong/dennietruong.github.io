@@ -764,6 +764,7 @@ Read more style on ABOUT page
 
 
 /* Project Toc Bar (Table of Content)*/
+/*===========
 .projects-toc-bar {
   display: inline-block;         /* shrink-wrap to content */
   margin: 0 auto 35px;           /* center horizontally */
@@ -774,6 +775,20 @@ Read more style on ABOUT page
   box-sizing: border-box;
 
   text-align: center;            /* center the buttons */
+}================
+*/
+
+.projects-toc-bar {
+  display: inline-flex;       /* shrink-wrap to content */
+  flex-direction: column;     /* stack buttons vertically */
+  align-items: stretch;       /* buttons fill width */
+  background: white;
+  border-radius: 14px;
+  padding: 14px 20px;         /* space inside rectangle */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  width: fit-content;         /* shrink-wrap width to buttons */
+  max-width: 250px;           /* optional */
+  margin: 0 auto;             /* center rectangle horizontally */
 }
 
 
