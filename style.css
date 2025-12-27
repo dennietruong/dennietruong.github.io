@@ -625,8 +625,10 @@ Read more style on ABOUT page
 
 /* Table of Contents (Project Selector) */
 .projects-toc {
-  flex: 1;
+  flex: 0 0 auto;       /* don’t grow, don’t shrink, fit content */
+  align-self: flex-start; /* make it fit content vertically at top */
 }
+
 
 .projects-toc ul {
   list-style: none;
@@ -680,7 +682,7 @@ Read more style on ABOUT page
 .project-selector button {
   appearance: none;
   border: none;
-  width: 230px;            /* fixed width */
+  width: 200px;            /* fixed width */
   padding: 10px 16px;
   border-radius: 999px;
   font-size: 0.82rem;
