@@ -615,38 +615,8 @@ Read more style on ABOUT page
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ====================
-   PROJECT PAGE (STABLE)
+   PROJECT PAGE 
 ======================*/
 
 /* Predictable sizing */
@@ -657,18 +627,19 @@ Read more style on ABOUT page
 /* Container for TOC + content */
 .projects-section {
   display: flex;
-  max-width: 1200px;      /* total max width of page */
+  max-width: 1200px;    /* or 100% if you want full browser width */
   margin: auto;
   padding: 60px 20px;
-  gap: 40px;
-  flex-wrap: nowrap;       /* prevent wrapping */
-  align-items: flex-start;
+  gap: 20px;            /* space between TOC and main content */
+  flex-wrap: nowrap;     /* prevent wrapping */
 }
 
+
 /* Table of Contents (Sidebar) */
-.projects-toc {
-  flex: 0 0 220px;         /* fixed width */
+.projects-toc-bar {
+  flex: 0 0 20%;         /* fixed 20% of container width */
 }
+
 
 /* TOC list */
 .projects-toc ul {
@@ -703,11 +674,10 @@ Read more style on ABOUT page
 }
 
 /* Main content */
-.projects-content {
-  flex: 1 1 auto;          /* take remaining space */
-  min-width: 700px;        /* prevent shrinking */
-  max-width: 950px;        /* prevent expanding too much */
+.projects-toc-bar {
+  flex: 0 0 20%;         /* fixed 20% of container width */
 }
+
 
 /* Project cards */
 .project-card {
@@ -764,9 +734,13 @@ Read more style on ABOUT page
 @media (max-width: 900px) {
   .projects-section {
     flex-direction: column;
-    max-width: 100%;
-    padding: 40px 15px;
   }
+  .projects-toc-bar,
+  .projects-content {
+    flex: 1 1 100%;
+  }
+}
+
 
   .projects-toc {
     flex: 1 1 100%;
