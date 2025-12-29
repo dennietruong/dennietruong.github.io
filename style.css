@@ -611,30 +611,35 @@ Read more style on ABOUT page
 
 
 
+
+
+
 /* ====================
-  PROJECT PAGE
+   PROJECT PAGE
 ======================*/
+
+/* Container for TOC + main content */
 .projects-section {
   display: flex;
-  max-width: 1100px;
+  max-width: 1200px;     /* wider max width for main content */
   margin: auto;
   padding: 60px 20px;
   gap: 40px;
 }
 
-
-/* Table of Contents (Project Selector) */
+/* Table of Contents (Project Selector / Sidebar) */
 .projects-toc {
-  flex: 0 0 25%;
+  flex: 0 0 280px;        /* fixed width for TOC */
+  max-width: 280px;
 }
 
-
+/* TOC list items */
 .projects-toc ul {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .projects-toc li {
@@ -650,27 +655,34 @@ Read more style on ABOUT page
   text-align: center;
 }
 
-.projects-toc li:hover {
-  background: #e63946;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
+.projects-toc li:hover,
 .projects-toc li.active {
   background: #e63946;
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transform: translateY(0);
-  border-bottom: 2px solid #fff; /* makes active tab “connected” visually */
 }
 
-/* Projects Content */
+/* Main Project Content */
 .projects-content {
-  flex: 0 0 75%;
+  flex: 1 1 auto;          /* take remaining space */
+  min-width: 650px;        /* prevent shrinking too much */
 }
 
-/* Project Selector (TABS)*/
+/* Individual Project Cards */
+.project-card {
+  display: none;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.project-card.active {
+  display: block;
+}
+
+/* Project Selector Buttons */
 .project-selector {
   display: flex;
   gap: 12px;
@@ -681,15 +693,12 @@ Read more style on ABOUT page
 .project-selector button {
   appearance: none;
   border: none;
-  width: 200px;            /* fixed width */
+  width: 200px;
   padding: 10px 16px;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;
-  white-space: normal;    /* allow text wrap */
-  word-break: break-word;
   text-align: center;
-  line-height: 1.2;
   cursor: pointer;
   background: #f6f8fa;
   color: #1d3557;
@@ -699,8 +708,6 @@ Read more style on ABOUT page
   transition: all 0.22s ease;
 }
 
-
-/* Hover */
 .project-selector button:hover {
   transform: translateY(-1px);
   background: #ffffff;
@@ -709,18 +716,42 @@ Read more style on ABOUT page
     0 6px 14px rgba(0,0,0,0.1);
 }
 
-/* Active */
 .project-selector button.active {
   background: linear-gradient(135deg, #e63946, #f77f00);
   color: white;
   box-shadow: 0 8px 18px rgba(230,57,70,0.3);
 }
 
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .projects-section {
+    flex-direction: column;
+  }
 
-/* Optional: subtle click effect */
-.project-selector button:active {
-  transform: scale(0.97);
+  .projects-toc {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .projects-toc ul {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .projects-toc li {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .projects-content {
+    min-width: 100%;
+  }
 }
+
+
 
 
 /* Individual Project Cards */
