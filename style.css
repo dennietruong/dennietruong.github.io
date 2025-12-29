@@ -229,6 +229,11 @@ body.home .hero-subtitle {
 
 
 
+
+
+
+
+
 /* =========================
    CONTACT PAGE
    ========================= */
@@ -281,7 +286,7 @@ body.home .hero-subtitle {
 
 
 
-/*CONTACT BOTTOM IMAGE AS PART OF PAGE*/
+/*CONTACT PAGE: Image at bottom of page*/
 .bottom-image {
   width: 100%;
   margin-top: 40px;       /* space between content and image */
@@ -297,6 +302,12 @@ body.home .hero-subtitle {
   border-radius: 6px;      /* optional: rounded corners */
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* optional: soft shadow */
 }
+
+
+
+
+
+
 
 
 
@@ -335,7 +346,7 @@ body.home .hero-subtitle {
 
 
 /* ------------
-Read more style on ABOUT page
+ABOUT PAGE: Style
 ----------------*/
 /* Main container */
 .about-main-text {
@@ -379,7 +390,7 @@ Read more style on ABOUT page
   display: none;
 }
 
-/* Read more button */
+/* ABOUT PAGE: Read more button */
 .read-more-btn {
   margin-top: 15px;
   background: none;
@@ -395,8 +406,7 @@ Read more style on ABOUT page
 }
 
 
-
-/* Buttons */
+/* ABOUT PAGE: Buttons */
 .about-buttons {
   margin-top: 25px;
   display: flex;
@@ -424,13 +434,13 @@ Read more style on ABOUT page
 }
 
 
-/* Tab content (fixed position so it doesn't jump) */
+/* ABOUT PAGE: Tab content (fixed position so it doesn't jump) */
 .about-main-text {
   margin-top: 25px;
 }
 
 
-/* Main About Me text box */
+/* ABOUT PAGE: Main About Me text box */
 .about-main-text {
   background: #f1f1f1;                 /* box background */
   padding: 25px;                        /* spacing inside box */
@@ -445,13 +455,12 @@ Read more style on ABOUT page
 }
 
 
-
-/* Tabs styles */
+/* ABOUT PAGE: Tabs styles */
 .tab-wrapper {
   margin-top: 25px;
 }
 
-/* All tabs */
+/* ABOUT PAGE: Tabs */
 .tab-wrapper .tab-content {
   display: none;
 
@@ -463,13 +472,13 @@ Read more style on ABOUT page
   line-height: 1.7;
 }
 
-/* Active tab */
+/* ABOUT PAGE: Active tab */
 .tab-wrapper .tab-content.active {
   display: block;
   animation: fadeUp 0.3s ease;
 }
 
-/* Animation */
+/* ABOUT PAGE: Animation */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -482,8 +491,7 @@ Read more style on ABOUT page
 }
 
 
-
-/* Tabs content style */
+/* ABOUT PAGE: Tabs content style */
 .skills-list {
   list-style: none;
   padding: 0;
@@ -521,8 +529,7 @@ Read more style on ABOUT page
 }
 
 
-
-/* Background image panel */
+/* ABOUT PAGE: Background image panel */
 .about-photo {
   position: absolute;
   top: 0;
@@ -537,7 +544,7 @@ Read more style on ABOUT page
   z-index: 1;
 }
 
-/* overlay only for dark-to-light fade effect */
+/* ABOUT PAGE: overlay only for dark-to-light fade effect */
 .about-photo::after {
   content: "";
   position: absolute;
@@ -550,7 +557,6 @@ Read more style on ABOUT page
   );
   pointer-events: none; /* allows JS click events to register */
 }
-
 
 
 /* Have Picture be responsive */
@@ -572,9 +578,9 @@ Read more style on ABOUT page
 }
 
 
-/* ====================
-  Picture Page Header
-======================*/
+/* ==============================================
+  PICTURE PAGE HEADER (About and Project pages)
+=================================================*/
 .page-header {
   width: 100%;
   height: 300px;
@@ -618,10 +624,6 @@ Read more style on ABOUT page
 /* ====================
    PROJECT PAGE 
 ======================*/
-/* =========================
-   PROJECT PAGE LAYOUT
-========================= */
-
 /* Container: TOC + content */
 .projects-section {
   display: flex;
@@ -632,7 +634,7 @@ Read more style on ABOUT page
   flex-wrap: nowrap;
 }
 
-/* Table of Contents (Sidebar) */
+/* PROJECT PAGE: Table of Contents (Sidebar) */
 .projects-toc-bar {
   flex: 0 0 20%;            /* 1/5 width */
   display: flex;
@@ -640,7 +642,7 @@ Read more style on ABOUT page
   gap: 20px;
 }
 
-/* TOC list */
+/* PROJECT PAGE: TOC list */
 .projects-toc ul {
   list-style: none;
   padding: 0;
@@ -698,6 +700,7 @@ Read more style on ABOUT page
 }
 
 .project-selector button {
+  width: 100%;               /* full width of sidebar */
   flex: 0 0 auto;
   padding: 10px 16px;
   border-radius: 999px;
@@ -724,9 +727,7 @@ Read more style on ABOUT page
   box-shadow: 0 8px 18px rgba(230,57,70,0.3);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* PROJECT PAGE: For smaller screen */
 @media (max-width: 900px) {
   .projects-section {
     flex-direction: column;  /* stacked layout */
