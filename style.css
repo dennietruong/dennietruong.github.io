@@ -634,10 +634,10 @@ Read more style on ABOUT page
 
 /* Table of Contents (Sidebar) */
 .projects-toc-bar {
-  flex: 0 0 20%;      /* 1/5 width */
+  flex: 0 0 20%;            /* 1/5 width */
   display: flex;
-  flex-direction: column;  /* vertical */
-  gap: 12px;
+  flex-direction: column;   /* stack vertically */
+  gap: 20px;
 }
 
 /* TOC list */
@@ -690,12 +690,11 @@ Read more style on ABOUT page
   display: block;
 }
 
-/* Project selector buttons (optional horizontal scrolling for small screens) */
+/* TOC Buttons */
 .project-selector {
   display: flex;
+  flex-direction: column;   /* stack vertically */
   gap: 12px;
-  overflow-x: auto;
-  flex-wrap: nowrap;
 }
 
 .project-selector button {
@@ -753,6 +752,16 @@ Read more style on ABOUT page
 
   .projects-content {
     flex: 1 1 100%;
+  }
+
+  .project-selector {
+    flex-direction: row;    /* horizontal on mobile */
+    gap: 10px;
+    overflow-x: auto;
+  }
+  .project-selector button {
+    width: auto;            /* let buttons shrink */
+    flex: 0 0 auto;
   }
 }
 
