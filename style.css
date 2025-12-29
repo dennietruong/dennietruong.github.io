@@ -618,28 +618,27 @@ Read more style on ABOUT page
 /* ====================
    PROJECT PAGE 
 ======================*/
+/* =========================
+   PROJECT PAGE LAYOUT
+========================= */
 
-/* Predictable sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Container for TOC + content */
+/* Container: TOC + content */
 .projects-section {
   display: flex;
-  max-width: 1200px;    /* or 100% if you want full browser width */
+  max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
-  gap: 20px;            /* space between TOC and main content */
-  flex-wrap: nowrap;     /* prevent wrapping */
+  gap: 20px;
+  flex-wrap: nowrap;
 }
-
 
 /* Table of Contents (Sidebar) */
 .projects-toc-bar {
-  flex: 0 0 20%;         /* fixed 20% of container width */
+  flex: 0 0 20%;      /* 1/5 width */
+  display: flex;
+  flex-direction: column;  /* vertical */
+  gap: 12px;
 }
-
 
 /* TOC list */
 .projects-toc ul {
@@ -647,7 +646,7 @@ Read more style on ABOUT page
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* vertical list */
   gap: 12px;
 }
 
@@ -662,10 +661,9 @@ Read more style on ABOUT page
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
   text-align: center;
-  white-space: nowrap;     /* prevents text wrap */
+  white-space: nowrap;
 }
 
-/* Active / hover */
 .projects-toc li:hover,
 .projects-toc li.active {
   background: #e63946;
@@ -673,13 +671,12 @@ Read more style on ABOUT page
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Main content */
-.projects-toc-bar {
-  flex: 0 0 20%;         /* fixed 20% of container width */
+/* Main content (Projects cards) */
+.projects-content {
+  flex: 1 1 80%;       /* 4/5 width */
 }
 
-
-/* Project cards */
+/* Individual Project Cards */
 .project-card {
   display: none;
   background: white;
@@ -687,24 +684,22 @@ Read more style on ABOUT page
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
-  width: 100%;            /* force full width of content area */
 }
 
 .project-card.active {
   display: block;
 }
 
-/* Project selector buttons */
+/* Project selector buttons (optional horizontal scrolling for small screens) */
 .project-selector {
   display: flex;
   gap: 12px;
-  flex-wrap: nowrap;       /* prevent wrapping */
-  overflow-x: auto;        /* horizontal scroll if needed */
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 
 .project-selector button {
   flex: 0 0 auto;
-  width: 180px;           /* slightly smaller for better fit */
   padding: 10px 16px;
   border-radius: 999px;
   font-size: 0.82rem;
@@ -730,39 +725,34 @@ Read more style on ABOUT page
   box-shadow: 0 8px 18px rgba(230,57,70,0.3);
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px) {
   .projects-section {
-    flex-direction: column;
+    flex-direction: column;  /* stacked layout */
   }
-  .projects-toc-bar,
-  .projects-content {
+
+  .projects-toc-bar {
     flex: 1 1 100%;
-  }
-}
-
-
-  .projects-toc {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .projects-content {
-    min-width: 100%;
-    max-width: 100%;
-  }
-
-  .project-selector {
-    flex-wrap: nowrap;
+    flex-direction: row;      /* horizontal TOC on small screens */
     overflow-x: auto;
+  }
+
+  .projects-toc ul {
+    flex-direction: row;
+    gap: 10px;
   }
 
   .projects-toc li {
     flex: 0 0 auto;
-    width: auto;
     padding: 10px 14px;
     font-size: 0.95rem;
+    width: auto;
+  }
+
+  .projects-content {
+    flex: 1 1 100%;
   }
 }
 
