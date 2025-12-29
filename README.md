@@ -8,4 +8,4 @@ This is my personal website hosted on GitHub Pages.
 - `script.js` — tab navigation logic
 
 ## Live Site
-https://dennietruong.github.io/
+https://dennietruong.github.io
