@@ -644,28 +644,30 @@ Read more style on ABOUT page
 
 
 
+
 /* ====================
-   PROJECT PAGE
+   PROJECT PAGE (STABLE)
 ======================*/
 
-/* Ensure predictable sizing */
-.projects-section, .projects-toc, .projects-content, .projects-toc li, .project-selector button {
+/* Predictable sizing */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 /* Container for TOC + content */
 .projects-section {
   display: flex;
-  max-width: 1200px;
+  max-width: 1200px;      /* total max width of page */
   margin: auto;
   padding: 60px 20px;
   gap: 40px;
-  flex-wrap: nowrap;          /* prevent wrapping */
+  flex-wrap: nowrap;       /* prevent wrapping */
+  align-items: flex-start;
 }
 
-/* TOC fixed width */
+/* Table of Contents (Sidebar) */
 .projects-toc {
-  flex: 0 0 250px;           /* fixed width */
+  flex: 0 0 220px;         /* fixed width */
 }
 
 /* TOC list */
@@ -678,7 +680,6 @@ Read more style on ABOUT page
   gap: 12px;
 }
 
-/* TOC items */
 .projects-toc li {
   cursor: pointer;
   padding: 12px 16px;
@@ -690,10 +691,10 @@ Read more style on ABOUT page
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
   text-align: center;
-  white-space: nowrap;       /* prevents text wrapping */
+  white-space: nowrap;     /* prevents text wrap */
 }
 
-/* Active / hover states */
+/* Active / hover */
 .projects-toc li:hover,
 .projects-toc li.active {
   background: #e63946;
@@ -703,9 +704,9 @@ Read more style on ABOUT page
 
 /* Main content */
 .projects-content {
-  flex: 1 1 auto;           /* fill remaining space */
-  min-width: 700px;         /* prevents shrinking */
-  max-width: calc(100% - 290px); /* always respect TOC width + gap */
+  flex: 1 1 auto;          /* take remaining space */
+  min-width: 700px;        /* prevent shrinking */
+  max-width: 950px;        /* prevent expanding too much */
 }
 
 /* Project cards */
@@ -716,6 +717,7 @@ Read more style on ABOUT page
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
+  width: 100%;            /* force full width of content area */
 }
 
 .project-card.active {
@@ -726,13 +728,13 @@ Read more style on ABOUT page
 .project-selector {
   display: flex;
   gap: 12px;
-  flex-wrap: nowrap;         /* prevent wrapping */
-  overflow-x: auto;          /* horizontal scroll if needed */
+  flex-wrap: nowrap;       /* prevent wrapping */
+  overflow-x: auto;        /* horizontal scroll if needed */
 }
 
 .project-selector button {
-  flex: 0 0 auto;           /* fixed width */
-  width: 200px;
+  flex: 0 0 auto;
+  width: 180px;           /* slightly smaller for better fit */
   padding: 10px 16px;
   border-radius: 999px;
   font-size: 0.82rem;
@@ -758,10 +760,12 @@ Read more style on ABOUT page
   box-shadow: 0 8px 18px rgba(230,57,70,0.3);
 }
 
-/* Responsive for mobile */
+/* Responsive */
 @media (max-width: 900px) {
   .projects-section {
     flex-direction: column;
+    max-width: 100%;
+    padding: 40px 15px;
   }
 
   .projects-toc {
