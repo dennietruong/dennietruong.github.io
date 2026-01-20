@@ -351,7 +351,7 @@ body.home .hero-subtitle {
   margin-top: 25px;                       /* Tab content (fixed position so it doesn't jump) */
   margin-bottom: 25px;
   width: 100%;
-  max-width: 60%;                         /* ~half page width */
+  max-width: 65%;                         /* ~half page width */
   z-index: 2;                             /* on top of background */
   position: relative;
   line-height: 1.7;
@@ -429,12 +429,11 @@ body.home .hero-subtitle {
 }
 
 
-/* ABOUT PAGE: Tabs styles */
+/* ABOUT PAGE: Tabs */
 .tab-wrapper {
   margin-top: 25px;
 }
 
-/* ABOUT PAGE: Tabs */
 .tab-wrapper .tab-content {
   display: none;
 
@@ -446,7 +445,6 @@ body.home .hero-subtitle {
   line-height: 1.7;
 }
 
-/* ABOUT PAGE: Active tab */
 .tab-wrapper .tab-content.active {
   display: block;
   animation: fadeUp 0.3s ease;
@@ -465,7 +463,7 @@ body.home .hero-subtitle {
 }
 
 
-/* ABOUT PAGE: Tabs content style */
+/* ABOUT PAGE: Hobbies,  Skills, Coaching buttons*/
 .skills-list {
   list-style: none;
   padding: 0;
@@ -536,8 +534,8 @@ body.home .hero-subtitle {
 /* Website be responsive on mobile devices */
 @media (max-width: 900px) {
   .about-container {
-    min-height: auto;      /* remove forced height */
-    overflow: visible;     /* allow text to expand */
+    min-height: auto;
+    overflow: visible;
   }
 
   .about-section {
@@ -555,19 +553,20 @@ body.home .hero-subtitle {
     padding: 25px 18px;
     width: 100%;
   }
-   
- .about-main-text::after {
+
+  .about-main-text {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Keep read-more collapsed until clicked */
+  .about-main-text::after {
     display: none;
   }
 
- .tab-btn {
+  .tab-btn {
     padding: 10px 20px;
     font-size: 0.95rem;
-  }
-
- .read-more-content {
-    max-height: none;
-    overflow: visible;
   }
 }
 
