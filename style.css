@@ -314,7 +314,6 @@ body.home .hero-subtitle {
 /* =========================
     ABOUT PAGE
 ========================= */
-
 .about-section {
   max-width: 1100px;
   margin: auto;
@@ -345,9 +344,7 @@ body.home .hero-subtitle {
 }
 
 
-/* ------------
-ABOUT PAGE: Style
-----------------*/
+/*-- ABOUT PAGE: Style---*/
 /* Main container */
 .about-main-text {
   background: #f1f1f1;
@@ -559,12 +556,13 @@ ABOUT PAGE: Style
 }
 
 
-/* Have Picture be responsive */
+/* Website be responsive on mobile devices */
 @media (max-width: 900px) {
   .about-container {
-    flex-direction: column;
+    min-height: auto;      /* remove forced height */
+    overflow: visible;     /* allow text to expand */
   }
-
+   
   .about-photo {
     position: relative;
     width: 100%;
@@ -573,7 +571,26 @@ ABOUT PAGE: Style
   }
 
   .about-text {
+    padding: 25px 18px;
     width: 100%;
+  }
+
+  .read-more-content {
+    max-height: none;
+    overflow: visible;
+  }
+
+   .about-main-text::after {
+    display: none; /* remove fade overlay */
+  }
+
+  .about-section {
+    padding: 40px 15px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 }
 
