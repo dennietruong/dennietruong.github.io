@@ -412,6 +412,7 @@ body.home .hero-subtitle {
   display: flex;            /* urns the button into a flex container */
   align-items: center;      /* vertical center */
   justify-content: center;  /* horizontal center */
+  min-height: 44px;
   padding: 12px 28px;
   border-radius: 25px;
   background: #e63946;
@@ -570,6 +571,7 @@ body.home .hero-subtitle {
  .tab-btn {
     padding: 10px 20px;
     font-size: 0.95rem;
+     min-height: 40px;
   }
 }
 
