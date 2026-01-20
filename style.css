@@ -284,8 +284,6 @@ body.home .hero-subtitle {
   color: #555;
 }
 
-
-
 /*CONTACT PAGE: Image at bottom of page*/
 .bottom-image {
   width: 100%;
@@ -302,7 +300,6 @@ body.home .hero-subtitle {
   border-radius: 6px;      /* optional: rounded corners */
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* optional: soft shadow */
 }
-
 
 
 
@@ -344,7 +341,7 @@ body.home .hero-subtitle {
 }
 
 
-/*-- ABOUT PAGE: Style---*/
+/* ABOUT PAGE: Style */
 /* Main container */
 .about-main-text {
   background: #f1f1f1;
@@ -578,10 +575,6 @@ body.home .hero-subtitle {
   .read-more-content {
     max-height: none;
     overflow: visible;
-  }
-
-   .about-main-text::after {
-    display: none; /* remove fade overlay */
   }
 
   .about-section {
