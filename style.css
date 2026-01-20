@@ -342,16 +342,17 @@ body.home .hero-subtitle {
 
 
 /* ABOUT PAGE: Style */
-/* Main container */
+/* ABOUT PAGE: Main About Me text box */
 .about-main-text {
-  background: #f1f1f1;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #f1f1f1;                    /* box background */
+  padding: 25px;                          /* spacing inside box */
+  border-radius: 12px;                    /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  margin-top: 25px;                       /* Tab content (fixed position so it doesn't jump) */
   margin-bottom: 25px;
   width: 100%;
-  max-width: 500px;
-  z-index: 2;
+  max-width: 55%;                         /* ~half page width */
+  z-index: 2;                             /* on top of background */
   position: relative;
   line-height: 1.7;
 }
@@ -425,27 +426,6 @@ body.home .hero-subtitle {
 
 .tab-btn.active {
   background: #f77f00;
-}
-
-
-/* ABOUT PAGE: Tab content (fixed position so it doesn't jump) */
-.about-main-text {
-  margin-top: 25px;
-}
-
-
-/* ABOUT PAGE: Main About Me text box */
-.about-main-text {
-  background: #f1f1f1;                 /* box background */
-  padding: 25px;                        /* spacing inside box */
-  border-radius: 12px;                  /* rounded corners */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
-  margin-bottom: 25px;
-  width: 100%;
-  max-width: 500px;                     /* ~half page width */
-  z-index: 2;                            /* on top of background */
-  position: relative;
-  line-height: 1.7;
 }
 
 
@@ -559,7 +539,11 @@ body.home .hero-subtitle {
     min-height: auto;      /* remove forced height */
     overflow: visible;     /* allow text to expand */
   }
-   
+
+  .about-section {
+    padding: 40px 15px;
+  }
+
   .about-photo {
     position: relative;
     width: 100%;
@@ -576,14 +560,19 @@ body.home .hero-subtitle {
     max-height: none;
     overflow: visible;
   }
-
-  .about-section {
-    padding: 40px 15px;
+   
+ .about-main-text::after {
+    display: none;
   }
 
-  .tab-btn {
+ .tab-btn {
     padding: 10px 20px;
     font-size: 0.95rem;
+  }
+
+ .read-more-content {
+    max-height: none;
+    overflow: visible;
   }
 }
 
