@@ -341,7 +341,6 @@ body.home .hero-subtitle {
 }
 
 
-/* ABOUT PAGE: Style */
 /* ABOUT PAGE: Main About Me text box */
 .about-main-text {
   background: #f1f1f1;                    /* box background */
@@ -410,6 +409,9 @@ body.home .hero-subtitle {
 }
 
 .tab-btn {
+  display: flex;            /* urns the button into a flex container */
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
   padding: 12px 28px;
   border-radius: 25px;
   background: #e63946;
