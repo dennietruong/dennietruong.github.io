@@ -351,7 +351,7 @@ body.home .hero-subtitle {
   margin-top: 25px;                       /* Tab content (fixed position so it doesn't jump) */
   margin-bottom: 25px;
   width: 100%;
-  max-width: 55%;                         /* ~half page width */
+  max-width: 60%;                         /* ~half page width */
   z-index: 2;                             /* on top of background */
   position: relative;
   line-height: 1.7;
@@ -554,11 +554,6 @@ body.home .hero-subtitle {
   .about-text {
     padding: 25px 18px;
     width: 100%;
-  }
-
-  .read-more-content {
-    max-height: none;
-    overflow: visible;
   }
    
  .about-main-text::after {
