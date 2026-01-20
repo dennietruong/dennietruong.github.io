@@ -495,7 +495,7 @@ body.home .hero-subtitle {
   justify-content: center;     /* horizontal center */
   text-align: center;          /* center multi-line text */
   background: #dcedc8;
-  padding: 14px 12px;
+  padding: 24px 14px;  
   border-radius: 8px;
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
