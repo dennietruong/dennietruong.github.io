@@ -351,7 +351,7 @@ body.home .hero-subtitle {
   margin-top: 25px;                       /* Tab content (fixed position so it doesn't jump) */
   margin-bottom: 25px;
   width: 100%;
-  max-width: 60%;                         /* ~half page width */
+  max-width: 65%;                         /* ~half page width */
   z-index: 2;                             /* on top of background */
   position: relative;
   line-height: 1.7;
